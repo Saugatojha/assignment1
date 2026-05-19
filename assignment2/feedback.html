@@ -5,8 +5,8 @@
   <title>Feedback</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .form-note {
-      font-size: 13px;
+    .form-intro {
+      font-size: 14px;
       color: #888;
       margin-bottom: 20px;
     }
@@ -22,58 +22,81 @@
 
   <div class="page-wrapper">
 
-    <h1 id="main-title">Feedback</h1>
+    <h2 id="main-title">Feedback</h2>
 
-    <p class="intro-text">share what you think</p>
+    <p class="intro-text">share what you think about this site</p>
 
-    <p class="form-note">fill in the form below and submit your feedback</p>
-
-    <section>
-      <div class="info-box">
-        <h2>Why Feedback</h2>
-        <p>feedback helps me understand what is working and what needs to be improved. i appreciate any honest response.</p>
-      </div>
-    </section>
+    <p class="form-intro">fill in the form below and click submit when done</p>
 
     <section class="highlight">
-      <p>this highlighted section uses a <span class="marked">class selector</span> styled in the external css file.</p>
+      <p>your feedback helps improve this site. <span class="marked">all fields marked required must be filled.</span></p>
     </section>
 
     <section>
       <form>
-        <label>full name</label>
-        <input type="text" placeholder="your name here">
 
-        <label>email</label>
-        <input type="email" placeholder="your email">
+        <label>Full Name</label>
+        <input
+          type="text"
+          name="fullname"
+          placeholder="enter your full name"
+          required
+          minlength="3"
+          maxlength="60"
+        >
 
-        <label>how did you find this site</label>
-        <select>
-          <option>search engine</option>
-          <option>friend told me</option>
-          <option>assignment link</option>
-          <option>other</option>
+        <label>Email Address</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="enter your email"
+          required
+        >
+
+        <label>Rating</label>
+        <div class="radio-group">
+          <label><input type="radio" name="rating" value="very-satisfied" required> Very Satisfied</label>
+          <label><input type="radio" name="rating" value="satisfied"> Satisfied</label>
+          <label><input type="radio" name="rating" value="neutral"> Neutral</label>
+          <label><input type="radio" name="rating" value="unsatisfied"> Unsatisfied</label>
+        </div>
+
+        <label>Interests</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="interest" value="web"> Web Development</label>
+          <label><input type="checkbox" name="interest" value="mobile"> Mobile Development</label>
+          <label><input type="checkbox" name="interest" value="ai"> AI & Machine Learning</label>
+        </div>
+
+        <label>Country</label>
+        <select name="country" required>
+          <option value="">select your country</option>
+          <option value="nepal">Nepal</option>
+          <option value="india">India</option>
+          <option value="usa">United States</option>
+          <option value="uk">United Kingdom</option>
         </select>
 
-        <label>rating</label>
-        <select>
-          <option>very good</option>
-          <option>good</option>
-          <option>okay</option>
-          <option>needs work</option>
-        </select>
+        <label>Write your feedback here</label>
+        <textarea
+          name="feedback"
+          rows="5"
+          placeholder="Write your feedback here"
+          required
+          minlength="10"
+          maxlength="500"
+        ></textarea>
 
-        <label>your feedback</label>
-        <textarea rows="5" placeholder="write anything here"></textarea>
+        <button type="submit" style="letter-spacing: 1px;">Submit</button>
 
-        <button type="submit" style="margin-top: 10px;">send feedback</button>
       </form>
     </section>
 
     <section>
-      <h2>Contact</h2>
-      <p>if you want to reach out directly you can do so through the college email system. i will try to reply when i can.</p>
-      <p>thanks for taking the time to visit this page. it means a lot that you looked through the site.</p>
+      <div class="info-box">
+        <h2>Why Feedback</h2>
+        <p>honest feedback helps understand what works and what does not. any response is appreciated.</p>
+      </div>
     </section>
 
   </div>
