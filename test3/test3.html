@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup</title>
+</head>
+<body>
+  <button id="signupBtn">Sign Up</button>
+  <p id="statusMsg"></p>
+
+  <script>
+    const signupBtn = document.getElementById("signupBtn");
+    const statusMsg = document.getElementById("statusMsg");
+    let isProcessing = false;
+
+    function createAccount() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve("Account created successfully!");
+        }, 2000);
+      });
+    }
+
+    signupBtn.addEventListener("click", () => {
+      if (isProcessing) return;
+
+      isProcessing = true;
+      signupBtn.disabled = true;
+      statusMsg.textContent = "Creating account...";
+
+      createAccount().then((result) => {
+        statusMsg.textContent = result;
+        isProcessing = false;
+        signupBtn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
