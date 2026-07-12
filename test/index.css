@@ -1,0 +1,10 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 120px;
+}
+#post-list li {
+    margin-bottom: 20px;
+    padding-inline: 10px;
+    border: 2px;
+    border-radius: 2px;
+}
